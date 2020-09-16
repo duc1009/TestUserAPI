@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web.Http;
 
 namespace TestUserApi.Controllers
@@ -13,6 +14,13 @@ namespace TestUserApi.Controllers
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
+        }
+
+        [HttpGet("/FromRoute")]
+        //Get from route
+        public string Get([FromRoute] string id)
+        {
+            return id;
         }
 
         // GET api/values/5
