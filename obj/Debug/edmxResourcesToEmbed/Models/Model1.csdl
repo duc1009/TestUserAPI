@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsermanagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="gender" Type="UsermanagementModel.Gender" />
+  </EntityType>
+  <EntityContainer Name="UsermanagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
+  </EntityContainer>
+  <EnumType Name="Gender">
+    <Member Name="Nam" Value="1" />
+    <Member Name="Nữ" Value="2" />
+    <Member Name="Khác" Value="3" />
+  </EnumType>
+</Schema>
